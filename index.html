@@ -45,13 +45,13 @@
 
   // Display target date
   document.getElementById("target-date").textContent =
-    `Target Date: ${formatDate(targetDate)}`;
+    `கடைசியாக கேஸ் பதிவுசெய்யப்பட்ட தேதி: ${formatDate(targetDate)}`;
 
   // Display result on next line
   document.getElementById("result").textContent =
     diffDays >= 0
       ? `${diffDays} days remaining`
-      : `${Math.abs(diffDays)} days ago`;
+      : `இன்றுடன் ${Math.abs(diffDays)} நாட்கள்`;
 </script>
 
 </body>
