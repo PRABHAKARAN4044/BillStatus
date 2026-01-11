@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Date Difference</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 80px;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<h1 id="result"></h1>
+
+<script>
+  // Set your target date here (YYYY-MM-DD)
+  const targetDate = new Date("2025-01-01");
+  const today = new Date();
+
+  // Remove time part for accurate day difference
+  targetDate.setHours(0,0,0,0);
+  today.setHours(0,0,0,0);
+
+  const diffTime = targetDate - today;
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  const result = diffDays >= 0
+    ? `${diffDays} days remaining`
+    : `${Math.abs(diffDays)} days ago`;
+
+  document.getElementById("result").textContent = result;
+</script>
+
+</body>
+</html>
